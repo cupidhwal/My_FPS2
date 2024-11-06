@@ -3,6 +3,17 @@ using UnityEngine;
 namespace Unity.FPS.Game
 {
     /// <summary>
+    /// 조준경을 관리하는 데이터
+    /// </summary>
+    [System.Serializable]
+    public struct CrossHairData
+    {
+        public Sprite CrossHairSprite;
+        public Color CrossHairColor;
+        public float CrossHairSize;
+    }
+
+    /// <summary>
     /// 무기를 관리하는 클래스
     /// </summary>
     public class WeaponController : MonoBehaviour
@@ -17,6 +28,13 @@ namespace Unity.FPS.Game
 
         private AudioSource shootAudioSource;
         public AudioClip switchWeaponSfx;
+
+        // CrossHair
+        public CrossHairData crossHairDefault;          // 기본, 평상시
+        public CrossHairData crossHairTargetInSight;    // 적을 포착했을 때
+
+        public float aimZoomRatio = 1;
+        public Vector3 aimOffset = Vector3.zero;
         #endregion
 
         #region Life Cycle

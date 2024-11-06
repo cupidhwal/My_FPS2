@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4917782838448717432}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AimPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7951103439727585977}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PistonSocket (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 825220459589154871}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GunRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7790229181078538301}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PistonSocket (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 2225486910712267856}
   - component: {fileID: 8090847488450120274}
   - component: {fileID: 6195775018565523854}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Weapon_Blaster
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -274,6 +274,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponRoot: {fileID: 1505447205160222267}
   switchWeaponSfx: {fileID: 8300000, guid: 9226eae187361074ba4f5c8fe759efa8, type: 3}
+  crossHairDefault:
+    CrossHairSprite: {fileID: 21300000, guid: 4f97f8aabbd2a65458671e6e1147d385, type: 3}
+    CrossHairColor: {r: 1, g: 1, b: 1, a: 0.8}
+    CrossHairSize: 55
+  crossHairTargetInSight:
+    CrossHairSprite: {fileID: 21300000, guid: 4f97f8aabbd2a65458671e6e1147d385, type: 3}
+    CrossHairColor: {r: 1, g: 0, b: 0, a: 1}
+    CrossHairSize: 40
+  aimZoomRatio: 0.5
+  aimOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &2867801751256125023
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,7 +293,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2404975934069440899}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PistonSocket (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -315,7 +325,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 226946101372664820}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PistonSocket (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -347,7 +357,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6867164317952318004}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WeaponMesh_Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -381,7 +391,7 @@ GameObject:
   - component: {fileID: 6867164318176036209}
   - component: {fileID: 6867164318176806225}
   - component: {fileID: 6867164318177937297}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Primary_Weapon_Container_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -469,7 +479,7 @@ GameObject:
   - component: {fileID: 6867164318176036211}
   - component: {fileID: 6867164318176806227}
   - component: {fileID: 6867164318177937299}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Primary_Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -555,7 +565,7 @@ GameObject:
   - component: {fileID: 6867164318176036213}
   - component: {fileID: 6867164318176806229}
   - component: {fileID: 6867164318177937301}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Primary_Weapon_Container_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -643,7 +653,7 @@ GameObject:
   - component: {fileID: 6867164318176036215}
   - component: {fileID: 6867164318176806231}
   - component: {fileID: 6867164318177937303}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Primary_Weapon_Container_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -731,7 +741,7 @@ GameObject:
   - component: {fileID: 6867164318176036217}
   - component: {fileID: 6867164318176806233}
   - component: {fileID: 6867164318177937305}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Primary_Weapon_Front_Piece_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -817,7 +827,7 @@ GameObject:
   - component: {fileID: 6867164318176036219}
   - component: {fileID: 6867164318176806235}
   - component: {fileID: 6867164318177937307}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Primary_Weapon_Container_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -903,7 +913,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6867164318176036221}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Weapon_Primary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -944,7 +954,7 @@ GameObject:
   - component: {fileID: 6867164318176036223}
   - component: {fileID: 6867164318176806239}
   - component: {fileID: 6867164318177937311}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Primary_Weapon_Front_Piece_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1028,7 +1038,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8334323006752503713}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GunMuzzle
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -1064,7 +1074,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5781806936358044080, guid: fa498bfcbbc9707458a2c75334b150c8, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6694346691460421829, guid: fa498bfcbbc9707458a2c75334b150c8, type: 3}
       propertyPath: m_RootOrder
@@ -1134,7 +1144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5781806936358044080, guid: fa498bfcbbc9707458a2c75334b150c8, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6694346691460421829, guid: fa498bfcbbc9707458a2c75334b150c8, type: 3}
       propertyPath: m_RootOrder
@@ -1204,7 +1214,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5781806936358044080, guid: fa498bfcbbc9707458a2c75334b150c8, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6694346691460421829, guid: fa498bfcbbc9707458a2c75334b150c8, type: 3}
       propertyPath: m_RootOrder
@@ -1322,7 +1332,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5449920494797286051, guid: 21c8bd050f24da54285f8a3987ee6253, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1348,7 +1358,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5781806936358044080, guid: fa498bfcbbc9707458a2c75334b150c8, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6694346691460421829, guid: fa498bfcbbc9707458a2c75334b150c8, type: 3}
       propertyPath: m_RootOrder

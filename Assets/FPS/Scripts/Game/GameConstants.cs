@@ -1,4 +1,7 @@
-﻿namespace Unity.FPS.Game
+﻿using Unity.VisualScripting;
+using UnityEngine;
+
+namespace Unity.FPS.Game
 {
     public class GameConstants
     {
@@ -15,6 +18,5 @@
         public const string k_ButtonNameSprint = "Sprint";
         public const string k_ButtonNameJump = "Jump";
         public const string k_ButtonNameCrouch = "Crouch";
-
     }
 }

@@ -147,5 +147,12 @@ namespace Unity.FPS.Gameplay
 
             return 0;
         }
+
+        public bool GetAimInputHeld()
+        {
+            if (CanProcessInput())
+                return Input.GetButton(GameConstants.k_ButtonNameAim);
+            return false;
+        }
     }
 }
