@@ -22,10 +22,13 @@ namespace Unity.FPS.UI
         private bool wasPointEnemy = false;
         #endregion
 
+        #region Properties
+        public PlayerWeaponsManager Player => player;
+        #endregion
+
         void Start()
         {
             crossHairRect = crossHairImage.rectTransform;
-            player = FindFirstObjectByType<PlayerWeaponsManager>();
 
             player.OnSwitchToWeapon += OnWeaponChange;
         }
@@ -35,6 +38,11 @@ namespace Unity.FPS.UI
             UpdateCross();
 
             wasPointEnemy = player.IsPointEnemy;
+        }
+
+        private void Awake()
+        {
+            player = FindFirstObjectByType<PlayerWeaponsManager>();
         }
 
         // 적을 포착했을 때
