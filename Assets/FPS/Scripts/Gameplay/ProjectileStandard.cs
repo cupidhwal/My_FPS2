@@ -11,11 +11,11 @@ namespace Unity.FPS.Gameplay
     {
         #region Variables
         private ProjectileBase projectileBase;
-        private float maxLifeTime = 5f;
+        //private float maxLifeTime = 5f;
 
         // 이동
-        [SerializeField] private float speed = 20f;
-        [SerializeField] private float gravityDown = 0f;
+        public float speed = 20f;
+        public float gravityDown = 0f;
         public Transform root;
         public Transform tip;
 
@@ -24,7 +24,8 @@ namespace Unity.FPS.Gameplay
         private float shotTime;
 
         // 충돌
-        private float radius = 0.01f;               // 충돌을 검사하는 구체의 반경
+        public float damage;
+        public float radius = 0.01f;               // 충돌을 검사하는 구체의 반경
         public LayerMask hittableLayers = -1;       // hit 가능 Layer
         private List<Collider> ignoredColliders;    // hit 판정 시 무시하는 충돌체 리스트
 

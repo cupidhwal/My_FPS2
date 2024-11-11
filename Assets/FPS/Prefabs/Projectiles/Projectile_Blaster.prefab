@@ -50,6 +50,8 @@ MonoBehaviour:
   gravityDown: 0
   root: {fileID: 3659995153115176982}
   tip: {fileID: 1135791333161367127}
+  damage: 15
+  radius: 0.01
   hittableLayers:
     serializedVersion: 2
     m_Bits: 4294967295
