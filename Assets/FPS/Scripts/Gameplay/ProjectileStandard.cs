@@ -35,12 +35,16 @@ namespace Unity.FPS.Gameplay
         private float impactVfxSpawnOffset = 0.1f;
         
         public AudioClip impactSfxClip;             // 타격음
+
+        private DamageArea damageArea;
         #endregion
 
         private void OnEnable()
         {
             projectileBase = GetComponent<ProjectileBase>();
             projectileBase.OnShoot += OnShoot;
+
+            damageArea = GetComponent<DamageArea>();
         }
 
         private void Update()
@@ -115,6 +119,19 @@ namespace Unity.FPS.Gameplay
         // Hit 구현, 데미지, VFX, SFX 등
         void OnHit(Vector3 point, Vector3 normal, Collider collider)
         {
+            // 데미지
+            if (damageArea)
+            {
+                damageArea.InflictDamageArea(damage, point, hittableLayers, QueryTriggerInteraction.Collide, Owner);
+            }
+            else
+            {
+                if (collider.TryGetComponent<Damagable>(out var damagable))
+                {
+                    damagable.InflictDamage(damage, false, Owner);
+                }
+            }
+
             // VFX
             if (impactVfxPrefab)
             {

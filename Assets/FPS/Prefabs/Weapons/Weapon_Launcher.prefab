@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2225486910712267856}
   - component: {fileID: 7583640433812654122}
   - component: {fileID: 2715990527880000567}
+  - component: {fileID: 5366152696353108877}
   m_Layer: 6
   m_Name: Weapon_Launcher
   m_TagString: Untagged
@@ -147,8 +148,8 @@ MonoBehaviour:
   weaponRoot: {fileID: 5646165488041817916}
   switchWeaponSfx: {fileID: 8300000, guid: 9226eae187361074ba4f5c8fe759efa8, type: 3}
   shootType: 2
-  maxAmmo: 8
-  delayBetweenShots: 0.5
+  maxAmmo: 4
+  delayBetweenShots: 2
   weaponMuzzle: {fileID: 2749496858225023403}
   muzzleFlashPrefab: {fileID: 0}
   shootSfx: {fileID: 8300000, guid: dd51533f72929d04e9542c31665502e1, type: 3}
@@ -164,6 +165,47 @@ MonoBehaviour:
   aimOffset: {x: 0, y: 0, z: 0}
   recoilForce: 0.5
   projectilePrefab: {fileID: 7197986262985208834, guid: 0e23901b938cf4f4eb86850d912715eb, type: 3}
+  bulletsPerShot: 1
+  bulletSpreadAngle: 0
+  ammoUseOnStartCharge: 1
+  ammoUsageRateWhileCharging: 1
+  lastChargeTriggerTimeStamp: 0
+  ammoReloadRate: 1
+  ammoReloadDelay: 2
+  automaticReload: 1
+--- !u!114 &5366152696353108877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2225486910712267859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70b63d5cbab0d404ca81666795ec58d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chargingObject: {fileID: 2990922162098100103}
+  spinningFrame: {fileID: 2990922162098100101}
+  discOrbitParticlePrefab: {fileID: 1087039822203223203, guid: b9cf7bff98404174d83a37d58c543aa5, type: 3}
+  scale:
+    Min: {x: 0.01, y: 0.01, z: 0.01}
+    Max: {x: 0.99, y: 0.99, z: 0.99}
+  offset: {x: 0, y: 0, z: 0.764}
+  parentTransform: {fileID: 0}
+  orbitY:
+    Min: 3.1416
+    Max: 12.5664
+  radius:
+    Min: {x: 0.5, y: 0.5, z: 0.5}
+    Max: {x: 1.5, y: 1.5, z: 1.5}
+  spinningSpeed:
+    Min: 50
+    Max: 1500
+  chargeSound: {fileID: 8300000, guid: ce8c3d788311dac4c9d80fd1c9153275, type: 3}
+  loopChargeWeaponSfx: {fileID: 8300000, guid: 7a26b27033c0f0b47bd9de9fbe2084b3, type: 3}
+  useProceduralPitchOnLoop: 0
+  maxProceduralPitchValue: 2
 --- !u!1 &2990922162098100101
 GameObject:
   m_ObjectHideFlags: 0

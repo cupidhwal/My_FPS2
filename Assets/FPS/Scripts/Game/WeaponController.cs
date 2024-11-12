@@ -65,6 +65,8 @@ namespace Unity.FPS.Game
 
         // 발사체
         public ProjectileBase projectilePrefab;
+        [SerializeField] private int bulletsPerShot = 1;        // 한번 슛하는데 발사되는 탄환의 갯수
+        [SerializeField] private float bulletSpreadAngle = 0f;  // 탄환이 퍼져나가는 각도
 
         public Vector3 MuzzleWorldVelocity { get; private set; }
         private Vector3 lastMuzzlePosition;
@@ -72,14 +74,18 @@ namespace Unity.FPS.Game
         // Charge: 발사 버튼을 누르고 있으면 발사체의 데미지, 속도가 일정값까지 커진다
         public float CurrentCharge { get; private set; }
         public bool IsCharging { get; private set; }
-        private float ammoUseOnStartCharge = 1f;    // 차지 시작 버튼을 누르기 위해 필요한 ammo 량
+        [SerializeField]
+        private float ammoUseOnStartCharge = 1f;        // 차지 시작 버튼을 누르기 위해 필요한 ammo 량
+        [SerializeField]
         private float ammoUsageRateWhileCharging = 1f;  // 차지하고 있는 동안 소비되는 ammo 량
         private float maxChargeDuration = 2f;           // 충전 시간 Max
 
         public float lastChargeTriggerTimeStamp;        // 충전 시작 시간
 
-        [SerializeField] private int bulletsPerShot = 1;        // 한번 슛하는데 발사되는 탄환의 갯수
-        [SerializeField] private float bulletSpreadAngle = 0f;  // 탄환이 퍼져나가는 각도
+        // Reload: 재장전
+        [SerializeField] private float ammoReloadRate = 1f;
+        [SerializeField] private float ammoReloadDelay = 2f;
+        [SerializeField] private bool automaticReload = true;   // 자동, 수동
 
         public float CurrentAmmoRatio => currentAmmo / maxAmmo;
         #endregion
@@ -96,6 +102,7 @@ namespace Unity.FPS.Game
         private void Update()
         {
             UpdateCharge();
+            UpdateAmmo();
 
             // MuzzleWorldVelocity
             if (Time.deltaTime > 0f)
@@ -113,6 +120,25 @@ namespace Unity.FPS.Game
         #endregion
 
         #region Methods
+        // Reload - Auto
+        private void UpdateAmmo()
+        {
+            if (automaticReload && currentAmmo < maxAmmo && !IsCharging &&
+                lastTimeShot + ammoReloadDelay < Time.time)
+            {
+                currentAmmo += ammoReloadRate * Time.deltaTime;
+                currentAmmo = Mathf.Clamp(currentAmmo, 0, maxAmmo);
+            }
+        }
+
+        // Reload - Manual
+        public void Reload()
+        {
+            if (automaticReload || currentAmmo >= maxAmmo || IsCharging) return;
+
+            currentAmmo = maxAmmo;
+        }
+
         void UpdateCharge()
         {
             if (IsCharging)
@@ -241,10 +267,7 @@ namespace Unity.FPS.Game
             if (currentAmmo >= 1f && (lastTimeShot + delayBetweenShots) < Time.time)
             {
                 currentAmmo -= 1f;
-                Debug.Log($"CurrentAmmo: {currentAmmo}");
-
                 HandleShoot();
-
                 return true;
             }
             return false;
