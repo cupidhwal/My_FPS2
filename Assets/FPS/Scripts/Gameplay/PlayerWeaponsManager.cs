@@ -168,10 +168,8 @@ namespace Unity.FPS.Gameplay
             {
                 if (Physics.Raycast(weaponCamera.transform.position, weaponCamera.transform.forward, out RaycastHit hit, 300f))
                 {
-                    if (hit.transform.TryGetComponent<Health>(out var _))
-                    {
+                    if (hit.transform.TryGetComponent<Damagable>(out var _))
                         IsPointEnemy = true;
-                    }
                     else IsPointEnemy = false;
                 }
             }
